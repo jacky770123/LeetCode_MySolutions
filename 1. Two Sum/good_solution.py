@@ -4,11 +4,12 @@ class Solution:
         :type nums: List[int]
         :type target: int
         :rtype: List[int]
+        https://medium.com/@havbgbg68/leetcode-1-two-sum-python-8d77c223abd3
         """
-        h = {}
+        hash_table = {}
         for i, num in enumerate(nums):
-            n = target - num
-            if n not in h:
-                h[num] = i
-            else:
-                return [h[n], i]
+            if target - num in hash_table:
+                return([hash_table[target - num], i])
+                break
+            hash_table[num] = i
+        return([])
